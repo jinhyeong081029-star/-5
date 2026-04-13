@@ -1,0 +1,129 @@
+.inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.header .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px;
+    background: #f9f9f9;
+}
+
+.header .gnb {}
+
+.header .gnb>ul>li {
+    position: relative;
+}
+
+.header .gnb>ul>li>a {
+    display: block;
+    line-height: 120px;
+}
+
+.header .gnb>ul>li ul {
+    display: none;
+    position: absolute;
+    top: 112px;
+    left: 40px;
+    z-index: 4;
+    transform: translate(-50%, 0);
+    background: #fff;
+    border: 1px solid #ddd;
+    border-top: 2px solid tomato;
+}
+
+.header .gnb>ul>li:hover ul {
+    display: block;
+}
+
+.header .gnb>ul>li ul a {
+    display: block;
+    line-height: 40px;
+    padding: 0 40px 0 24px;
+}
+
+.header .gnb>ul>li ul li~li a {
+    border-top: 1px solid #ddd;
+}
+
+@media (max-width:768px) {
+    .header h1.on {
+        position: fixed;
+        z-index: 1001;
+    }
+
+    .header .gnb {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        z-index: 1000;
+
+        width: calc(100% - 90px);
+        height: 150vh;
+
+        background: #fff;
+        border-right: 1px solid #ddd;
+
+        padding: 160px 15px 0 15px;
+    }
+
+    .header .gnb.on {
+        left: 0;
+    }
+
+}
+
+.header .gnb>ul {
+    display: flex;
+    gap: 40px;
+}
+
+.header .btn {
+    display: none;
+}
+
+@media (max-width:768px) {
+    .header .gnb>ul {
+        display: block;
+    }
+
+    .header .gnb>ul>li>a {
+        display: block;
+        line-height: 40px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .header .gnb>ul>li ul {
+        display: none;
+
+        position: static;
+        top: 112px;
+        left: 50px;
+        z-index: 4;
+        transform: translate(0, 0);
+        background: #fff;
+        border-top: 2px solid tomato;
+    }
+
+    .header.gnb>ul>li:hover ul {
+        display: block;
+    }
+
+    .header .btn {
+        display: block;
+
+        position: fixed;
+        top: 40px;
+        right: 15px;
+    }
+}
+
+.footer {
+    position: relative;
+    z-index: 1;
+    background: #333;
+    height: 200vh;
+}
